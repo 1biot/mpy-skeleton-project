@@ -1,0 +1,3 @@
+[submodule "tools/mpy-cli"]
+	path = tools/mpy-cli
+	url = https://github.com/1biot/mpy-cli

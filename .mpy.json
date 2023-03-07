@@ -1,0 +1,10 @@
+{
+    "name": "Micropython project skeleton",
+    "device": "esp32",
+    "micropython_version": "1.19.1",
+    "address": "/dev/tty.SLAB_USBtoUART",
+    "delay": 2,
+    "include": [
+        "src"
+    ]
+}

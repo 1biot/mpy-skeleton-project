@@ -1,0 +1,13 @@
+{
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=C0114",
+        "--disable=C0116",
+        "--disable=W1514"
+    ],
+    "python.envFile": "${workspaceFolder}/.vscode/.env"
+}
