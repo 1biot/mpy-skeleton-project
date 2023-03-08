@@ -27,6 +27,8 @@ PROJECT
 |   |   |-- connect.sh
 |   |   |-- device.sh
 |   |   |-- env.sh
+|   |   |-- mpy-cli
+|   |   |-- README.md
 |-- .mpy.json
 |-- README.md
 ```
@@ -54,16 +56,19 @@ Main config file is .mpy.json
     "micropython_version": "1.19.1", // micropython version
     "address": "/dev/tty.SLAB_USBtoUART", // device address
     "delay": 2, // delay for fixing bug with Ampy and MacOS
-    "include": [
-        "src"
-    ]
+    "env_path": ".venv", // you can choose path where mpy-cli install environment
+    "include_dir": "src" // your project dir
 }
 ```
-
+### mpy-cli
+Run this command for easy using tools
+```commandline
+PATH=$PATH:$PWD/tools/mpy-cli
+```
 ### Environment
 We need to initialize our project python environment.
 ```commandline
-source ./tools/mpy-cli/env.sh init
+source mpy-cli env init
 ```
 
 ### IDE's
@@ -81,56 +86,56 @@ Everything is done. When you open the project after creating environment everyth
 We are using Ampy and mpy-cli provides all functionality of that module. See
 
 ```commandline
-./tools/mpy-cli/device.sh --help
+mpy-cli device --help
 ```
 
 ### Upload all
-Upload all files and directories from `.mpy.json`
+Upload all files and directories from `include_dir` at `.mpy.json`
 
 ```commandline
-./tools/mpy-cli/device.sh upload
+mpy-cli device upload-all
 ```
 
 ### Upload single file
 
 ```commandline
-./tools/mpy-cli/device.sh put src/main.py main.py
+mpy-cli device put src/main.py main.py
 ```
 
 ### Upload folder
 
 ```commandline
-./tools/mpy-cli/device.sh put src/lib lib
+mpy-cli device put src/lib lib
 ```
 
 ### List files
 
 ```commandline
-./tools/mpy-cli/device.sh ls
+mpy-cli device ls
 ```
 
 ### List files at folder
 
 ```commandline
-./tools/mpy-cli/device.sh ls lib
+mpy-cli device ls lib
 ```
 
 ### Remove file
 
 ```commandline
-./tools/mpy-cli/device.sh rm boot.py
+mpy-cli device rm boot.py
 ```
 
 ### Remove folder
 
 ```commandline
-./tools/mpy-cli/device.sh rmdir lib
+mpy-cli device rmdir lib
 ```
 
 ## Connecting to the device
 It is easy to connect to your device. Just type
 ```commandline
-./tools/mpy-cli/connect.sh
+mpy-cli connect
 ```
 ```
 Connected to MicroPython at /dev/tty.SLAB_USBtoUART

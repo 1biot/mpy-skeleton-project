@@ -4,7 +4,6 @@
     "micropython_version": "1.19.1",
     "address": "/dev/tty.SLAB_USBtoUART",
     "delay": 2,
-    "include": [
-        "src"
-    ]
+    "env_path": ".venv",
+    "include_dir": "src"
 }
